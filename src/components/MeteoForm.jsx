@@ -6,8 +6,8 @@ const MeteoForm = () => {
     data: null,
     search: "Napoli",
     cityName: "Napoli",
-    temp: "",
     countryCode: "IT",
+    temp: "",
     maxTemp: null,
     minTemp: null,
     myapi: "2a0e8387bf39270459e34d376bc4ec12",
@@ -56,8 +56,8 @@ const MeteoForm = () => {
               type="text"
             ></input>
           </div>
-          <div className={"bar-weather"}>
-            <div className={"weather-alt"}>
+          <div className={"container-weather"}>
+            <div className={"alt-weather"}>
               <h1 id={"cityname"}>
                 {weatherData.cityName ? weatherData.cityName : "Loading"}
               </h1>
