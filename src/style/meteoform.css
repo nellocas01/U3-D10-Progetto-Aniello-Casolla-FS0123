@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box; }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover; }
+
+    .main-content{
+    background-color: aquamarine;
+    }
