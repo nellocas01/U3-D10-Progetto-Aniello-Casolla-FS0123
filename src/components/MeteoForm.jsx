@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import logometeo from "../img/logometeo.png";
 
-function MeteoForm() {
+const MeteoForm = () => {
   const [weatherData, setWeatherData] = useState({
     data: null,
     search: "Napoli",
@@ -78,6 +78,6 @@ function MeteoForm() {
       </div>
     </div>
   );
-}
+};
 
 export default MeteoForm;
