@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   background-image: linear-gradient(#5e8499, #2c6c9cfd);
+  overflow: auto;
 }
 
 .card-container {
@@ -15,4 +16,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.info-card {
+  width: 100%;
+  padding: 1rem;
 }

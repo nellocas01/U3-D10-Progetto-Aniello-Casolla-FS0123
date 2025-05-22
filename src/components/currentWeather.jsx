@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 
-function CurrentWeather() {
+// eslint-disable-next-line import/no-anonymous-default-export
+export default ({ type }) => {
   const { current, status, error } = useSelector((state) => state.weather);
 
   if (status === "loading") return <p>Caricamento...</p>;
@@ -10,7 +11,7 @@ function CurrentWeather() {
   const {
     // name,
     weather,
-    main: { temp, humidity },
+    main: { temp, humidity, temp_max, temp_min },
     wind: { speed },
     sys: { sunrise, sunset },
     // dt,
@@ -26,24 +27,56 @@ function CurrentWeather() {
     });
 
   return (
-    <div>
-      <img
-        src={`https://openweathermap.org/img/wn/${iconCode}@2x.png`}
-        alt={description}
-        width={200}
-      />
-      <p className="text-capitalize text-center text-light display-6">
-        {description}
-      </p>
-      <h3 className="display-1 text-center text-light">{Math.round(temp)}°C</h3>
-      {/* <ul className="list-unstyled">
-        <li>🌬 Vento: {speed} m/s</li>
-        <li>💧 Umidità: {humidity}%</li>
-        <li>🌅 Alba: {formatTime(sunrise)}</li>
-        <li>🌇 Tramonto: {formatTime(sunset)}</li>
-      </ul> */}
-    </div>
+    <>
+      {type === "main" ? (
+        <div>
+          <img
+            src={`https://openweathermap.org/img/wn/${iconCode}@2x.png`}
+            alt={description}
+            width={100}
+            className="ms-5"
+          />
+          <p className="text-capitalize text-center text-light display-6">
+            {description}
+          </p>
+          <h3 className="display-3 text-center text-light">
+            {Math.round(temp)}°C
+          </h3>
+        </div>
+      ) : (
+        <div className="info-card">
+          <ul className="list-group">
+            <li className="d-flex justify-content-between">
+              <div className="ms-2 me-auto text-secondary">
+                Temperatura minima
+              </div>
+              <span className="me-2 text-secondary">{temp_min}°c</span>
+            </li>
+            <li className="d-flex justify-content-between mt-3">
+              <div className="ms-2 me-auto text-secondary">
+                Temperatura massima
+              </div>
+              <span className="me-2 text-secondary">{temp_max}°c</span>
+            </li>
+            <li className="d-flex justify-content-between mt-3">
+              <div className="ms-2 me-auto text-secondary">Vento</div>
+              <span className="me-2 text-secondary">{speed} m/s</span>
+            </li>
+            <li className="d-flex justify-content-between mt-3">
+              <div className="ms-2 me-auto text-secondary">Umidità</div>
+              <span className="me-2 text-secondary">{humidity}%</span>
+            </li>
+            <li className="d-flex justify-content-between mt-3">
+              <div className="ms-2 me-auto text-secondary">Alba</div>
+              <span className="me-2 text-secondary">{formatTime(sunrise)}</span>
+            </li>
+            <li className="d-flex justify-content-between mt-3">
+              <div className="ms-2 me-auto text-secondary">Tramonto</div>
+              <span className="me-2 text-secondary">{formatTime(sunset)}</span>
+            </li>
+          </ul>
+        </div>
+      )}
+    </>
   );
-}
-
-export default CurrentWeather;
+};

@@ -18,7 +18,7 @@ export default () => {
   };
 
   return (
-    <div className="input-group p-5">
+    <div className="input-group p-5 container-sm">
       <input
         type="text"
         className="form-control"

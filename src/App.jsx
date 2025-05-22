@@ -6,6 +6,7 @@ import Forecast from "./components/forecast";
 import "./App.css";
 
 function App() {
+  // stato che gestisce lo switch delle card
   const [showMainCard, setShowMainCard] = useState(true);
   const weather = useSelector((state) => state.weather.current);
 
@@ -38,7 +39,7 @@ function App() {
         <div className="card-content">
           {showMainCard ? (
             <>
-              <CurrentWeather />
+              <CurrentWeather type="main" />
               <Forecast type="daily" />
             </>
           ) : (
@@ -50,16 +51,26 @@ function App() {
         </div>
       </div>
 
-      <footer className="text-center">
+      <footer className="text-center mt-3">
         <span
           onClick={() => setShowMainCard(true)}
-          style={{ cursor: "pointer" }}
+          style={{
+            cursor: "pointer",
+            fontSize: "2rem",
+            color: showMainCard ? "#fff" : "#000",
+            margin: "0 5px",
+          }}
         >
           ●
         </span>
         <span
           onClick={() => setShowMainCard(false)}
-          style={{ cursor: "pointer", opacity: 0.5 }}
+          style={{
+            cursor: "pointer",
+            fontSize: "2rem",
+            color: !showMainCard ? "#fff" : "#000",
+            margin: "0 5px",
+          }}
         >
           ●
         </span>
