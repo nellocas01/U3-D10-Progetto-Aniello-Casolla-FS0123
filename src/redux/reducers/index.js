@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 // open-weather api key
-const API_KEY = "2a0e8387bf39270459e34d376bc4ec12";
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 // Thunk per fetchare meteo attuale per città
 export const fetchCurrentWeather = createAsyncThunk(
