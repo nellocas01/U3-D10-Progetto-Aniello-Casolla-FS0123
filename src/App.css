@@ -1,0 +1,18 @@
+.app-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(#5e8499, #2c6c9cfd);
+}
+
+.card-container {
+  padding: 1;
+  background-image: linear-gradient(#022341, #009474);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

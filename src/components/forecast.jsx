@@ -6,12 +6,12 @@ function Forecast() {
 
   if (!forecast || forecast.length === 0) return null;
 
-  const grouped = groupForecastByDay(forecast).slice(0, 5); // Solo 5 giorni
+  // forecast dei prossimi 5 giorni
+  const grouped = groupForecastByDay(forecast).slice(1, 6);
 
   return (
-    <div className="card shadow-sm p-4">
-      <h3 className="mb-3">Previsioni prossimi giorni</h3>
-      <div className="d-flex flex-wrap gap-3">
+    <div>
+      <div className="d-flex flex-wrap gap-2 p-3">
         {grouped.map((day) => {
           const dateObj = new Date(day.date);
           const dayName = dateObj.toLocaleDateString("it-IT", {
@@ -21,15 +21,15 @@ function Forecast() {
           return (
             <div
               key={day.date}
-              className="text-center border rounded p-2"
+              className="text-center"
               style={{ width: 100 }}
             >
-              <div>{dayName}</div>
               <img
                 src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`}
                 alt=""
               />
-              <div>{day.avgTemp}°C</div>
+              <p className="text-light">{dayName}</p>
+              <p className="text-light">{day.avgTemp}°C</p>
             </div>
           );
         })}

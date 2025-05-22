@@ -8,7 +8,7 @@ function CurrentWeather() {
   if (!current) return null;
 
   const {
-    name,
+    // name,
     weather,
     main: { temp, humidity },
     wind: { speed },
@@ -26,20 +26,22 @@ function CurrentWeather() {
     });
 
   return (
-    <div className="card shadow-sm p-4 mb-4">
-      <h2>{name}</h2>
-      <p className="text-capitalize">{description}</p>
+    <div>
       <img
         src={`https://openweathermap.org/img/wn/${iconCode}@2x.png`}
         alt={description}
+        width={200}
       />
-      <h3>{Math.round(temp)}°C</h3>
-      <ul className="list-unstyled">
+      <p className="text-capitalize text-center text-light display-6">
+        {description}
+      </p>
+      <h3 className="display-1 text-center text-light">{Math.round(temp)}°C</h3>
+      {/* <ul className="list-unstyled">
         <li>🌬 Vento: {speed} m/s</li>
         <li>💧 Umidità: {humidity}%</li>
         <li>🌅 Alba: {formatTime(sunrise)}</li>
         <li>🌇 Tramonto: {formatTime(sunset)}</li>
-      </ul>
+      </ul> */}
     </div>
   );
 }
