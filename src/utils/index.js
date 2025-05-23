@@ -1,8 +1,10 @@
+// funzione che raggruppa una lista di previsioni meteorologiche per giorno e calcola 
+// la temperatura media e l'icona più frequente per ogni giorno.
 export function groupForecastByDay(list) {
-  const days = {};
+  const days = {}; // previsioni raggruppate
 
   list.forEach((entry) => {
-    const date = entry.dt_txt.split(" ")[0]; // "2023-05-25"
+    const date = entry.dt_txt.split(" ")[0]; // "2023-05-25" estrae la data 
     if (!days[date]) {
       days[date] = [];
     }
@@ -13,7 +15,7 @@ export function groupForecastByDay(list) {
     const temps = entries.map((e) => e.main.temp);
     const avgTemp = temps.reduce((sum, t) => sum + t, 0) / temps.length;
 
-    // Prendo l'icona più frequente della giornata
+    // Prende l'icona più frequente della giornata
     const iconCount = {};
     entries.forEach((e) => {
       const icon = e.weather[0].icon;

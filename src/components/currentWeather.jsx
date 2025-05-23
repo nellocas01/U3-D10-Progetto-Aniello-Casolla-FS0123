@@ -2,10 +2,8 @@ import { useSelector } from "react-redux";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ type }) => {
-  const { current, status, error } = useSelector((state) => state.weather);
+  const { current } = useSelector((state) => state.weather);
 
-  if (status === "loading") return <p>Caricamento...</p>;
-  if (status === "failed") return <p>Errore: {error}</p>;
   if (!current) return null;
 
   const {
