@@ -1,17 +1,21 @@
 # 🌤️ Meteo App con React + Redux
 
-Un'applicazione meteo moderna sviluppata con React, Redux Toolkit e Bootstrap. Permette di cercare il meteo attuale di qualsiasi località e visualizzare previsioni giornaliere e orarie tramite un'interfaccia moderna.
+Un'applicazione meteo moderna sviluppata con **React**, **Redux Toolkit** e **Bootstrap**. Permette di cercare il meteo attuale di qualsiasi località e visualizzare previsioni giornaliere e orarie tramite un'interfaccia moderna.
 
-![screenshot](./screenshot.png) <!-- opzionale -->
+## 🖼️ Screenshot
+
+![screenshot1](./src/screenshot1.png)
+
+![screenshot2](./src/screenshot2.png)
 
 ---
 
 ## 🚀 Tecnologie utilizzate
 
-- ⚛️ React
-- 📦 Redux Toolkit
-- 🎨 Bootstrap
-- 🌐 OpenWeather API
+- ⚛️ ***React***
+- 📦 ***Redux Toolkit***
+- 🎨 ***Bootstrap***
+- 🌐 ***OpenWeather API***
 
 ---
 
@@ -28,11 +32,10 @@ Un'applicazione meteo moderna sviluppata con React, Redux Toolkit e Bootstrap. P
 
 ## 🛠️ Come avviare il progetto in locale
 
-### 1. Clona il progetto
+### 1. Clona il repository
 
 ```bash
 git clone https://github.com/tuo-username/meteo-app.git
-cd meteo-app
 ```
 
 ### 2. Installa le dipendenze
@@ -58,3 +61,9 @@ sostituendo "inserisci_la_tua_API_KEY" l'applicazione funzionerà correttamente
 ### 5. Avvia l'applicazione da terminale digitando
 
 npm start
+
+# 👨‍💻 Autore
+Realizzato da Aniello Casolla – 07/03/2023.
+
+# 📌 Note
+Questo progetto fa parte del mio percorso di apprendimento ed è stato creato per esercitarmi con React Bootstrap e Redux. Qualsiasi feedback è benvenuto!
